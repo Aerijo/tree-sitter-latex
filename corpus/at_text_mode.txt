@@ -32,10 +32,10 @@ foo\bar@wibble
     (text_mode_at
       (makeatletter (makeatletter_token))
       (text_group_at
-        (begin_group)
+
         (text)
         (command_at (token_at))
-        (end_group))
+       )
       (makeatother (makeatother_token)))))
 
 ==============================

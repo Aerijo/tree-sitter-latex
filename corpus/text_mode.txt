@@ -31,7 +31,7 @@ fubar\quux[opt]{bar} wibble
     (text)
     (command (token))
     (opt_text_group (begin_opt) (text) (end_opt))
-    (text_group (begin_group) (text) (end_group))
+    (text_group (text))
     (text)))
 
 =============
@@ -100,9 +100,9 @@ foo{bar}wibble
   (text_mode
     (text)
     (text_group
-      (begin_group)
+
       (text)
-      (end_group))
+     )
     (text)))
 
 =============
@@ -132,9 +132,9 @@ quux
   (text_mode
     (text)
     (text_env
-      (begin (begin_token) (env_name (begin_group) (text) (end_group)))
+      (begin (begin_token) (env_name (text)))
       (text)
-      (end (end_token) (env_name (begin_group) (text) (end_group))))
+      (end (end_token) (env_name (text))))
   (text)))
 
 ===========
@@ -166,7 +166,7 @@ documentclass
       (documentclass
         (documentclass_token)
         (opt_text_group (begin_opt) (text) (end_opt))
-        (class_name (begin_group) (text) (end_group))))))
+        (class_name (text))))))
 
 ======================
 usepackage
@@ -179,7 +179,7 @@ usepackage
     (usepackage
       (usepackage_token)
       (opt_text_group (begin_opt) (text) (end_opt))
-      (package_name (begin_group) (text) (end_group))))))
+      (package_name (text))))))
 
 =====================
 emph
@@ -189,7 +189,7 @@ foo\emph{bar}wibble
 (document
   (text_mode
     (text)
-    (command (emph (emph_token) (text_group (begin_group) (text) (end_group))))
+    (command (emph (emph_token) (text_group (text))))
     (text)))
 
 =====================
@@ -200,7 +200,7 @@ foo\textbf{bar}wibble
 (document
   (text_mode
     (text)
-    (command (textbf (textbf_token) (text_group (begin_group) (text) (end_group))))
+    (command (textbf (textbf_token) (text_group (text))))
     (text)))
 
 =====================
@@ -211,7 +211,7 @@ foo\textit{bar}wibble
 (document
   (text_mode
     (text)
-    (command (textit (textit_token) (text_group (begin_group) (text) (end_group))))
+    (command (textit (textit_token) (text_group (text))))
     (text)))
 
 =====================
@@ -222,5 +222,5 @@ foo\texttt{bar}wibble
 (document
   (text_mode
     (text)
-    (command (texttt (texttt_token) (text_group (begin_group) (text) (end_group))))
+    (command (texttt (texttt_token) (text_group (text))))
     (text)))

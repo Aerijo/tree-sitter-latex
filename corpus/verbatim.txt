@@ -11,9 +11,9 @@ quux
   (text_mode
     (text)
     (verbatim_env
-      (verbatim_begin (begin_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group)))
+      (verbatim_begin (begin_token) (verbatim_env_group (verbatim_env_name)))
       (verbatim_text)
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))
 
 ===========================
@@ -29,9 +29,9 @@ quux
   (text_mode
     (text)
     (verbatim_env
-      (verbatim_begin (begin_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group)))
+      (verbatim_begin (begin_token) (verbatim_env_group (verbatim_env_name)))
       (verbatim_text)
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))
 
 ===========================
@@ -47,9 +47,9 @@ quux
   (text_mode
     (text)
     (verbatim_env
-      (verbatim_begin (begin_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group)))
+      (verbatim_begin (begin_token) (verbatim_env_group (verbatim_env_name)))
       (verbatim_text)
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))
 
 ===========================
@@ -65,9 +65,9 @@ quux
   (text_mode
     (text)
     (verbatim_env
-      (verbatim_begin (begin_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group)))
+      (verbatim_begin (begin_token) (verbatim_env_group (verbatim_env_name)))
       (verbatim_text)
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))
 
 ===========================
@@ -83,9 +83,9 @@ quux
   (text_mode
     (text)
     (verbatim_env
-      (verbatim_begin (begin_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group)))
+      (verbatim_begin (begin_token) (verbatim_env_group (verbatim_env_name)))
       (verbatim_text)
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))
 
 ===========================
@@ -101,9 +101,9 @@ quux
   (text_mode
     (text)
     (verbatim_env
-      (verbatim_begin (begin_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group)))
+      (verbatim_begin (begin_token) (verbatim_env_group (verbatim_env_name)))
       (verbatim_text)
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))
 
 ===========================
@@ -119,9 +119,9 @@ quux
   (text_mode
     (text)
     (verbatim_env
-      (verbatim_begin (begin_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group)))
+      (verbatim_begin (begin_token) (verbatim_env_group (verbatim_env_name)))
       (verbatim_text)
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))
 
 ===========================
@@ -137,9 +137,9 @@ quux
   (text_mode
     (text)
     (verbatim_env
-      (verbatim_begin (begin_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group)))
+      (verbatim_begin (begin_token) (verbatim_env_group (verbatim_env_name)))
       (verbatim_text)
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))
 
 ===========================
@@ -157,10 +157,10 @@ quux
     (verbatim_env
       (verbatim_begin
         (begin_token)
-        (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))
+        (verbatim_env_group (verbatim_env_name))
         (opt_text_group (begin_opt) (text) (end_opt)))
       (verbatim_text)
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))
 
 ===========================
@@ -178,10 +178,10 @@ quux
     (verbatim_env
       (verbatim_begin
         (begin_token)
-        (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))
-        (text_group (begin_group) (text) (end_group)))
+        (verbatim_env_group (verbatim_env_name))
+        (text_group (text)))
       (verbatim_text)
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))
 
 ======================
@@ -196,8 +196,8 @@ quux
   (text_mode
     (text)
     (verbatim_env
-      (verbatim_begin (begin_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group)))
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_begin (begin_token) (verbatim_env_group (verbatim_env_name)))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))
 
 ======================
@@ -214,7 +214,7 @@ quux
   (text_mode
     (text)
     (verbatim_env
-      (verbatim_begin (begin_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group)))
+      (verbatim_begin (begin_token) (verbatim_env_group (verbatim_env_name)))
       (verbatim_text)
-      (verbatim_end (end_token) (verbatim_env_group (begin_group) (verbatim_env_name) (end_group))))
+      (verbatim_end (end_token) (verbatim_env_group (verbatim_env_name))))
     (text)))

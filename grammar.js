@@ -130,7 +130,7 @@ module.exports = grammar({
       $.display_math_env_group
     ),
 
-    display_math_env_group: $ => seq($.begin_group, $.display_math_env_name, $.end_group),
+    display_math_env_group: $ => seq('{', $.display_math_env_name, '}'),
 
     display_math_env_name: $ => /(displaymath|eqnarray\*?|align\*?|alignat\*?|equation\*?|flalign\*?|gather\*?|multiline\*?|split\*?|dmath\*?|dseries\*?|dgroup\*?|darray\*?)/,
 
@@ -168,7 +168,7 @@ module.exports = grammar({
       $.inline_math_env_group
     ),
 
-    inline_math_env_group: $ => seq($.begin_group, $.inline_math_env_name, $.end_group),
+    inline_math_env_group: $ => seq('{', $.inline_math_env_name, '}'),
 
     inline_math_env_name: $ => 'math',
 
@@ -198,7 +198,7 @@ module.exports = grammar({
 
     verbatim_text: $ => repeat1(seq(repeat(/./), $._end_of_line)),
 
-    verbatim_env_group: $ => seq($.begin_group, $.verbatim_env_name, $.end_group),
+    verbatim_env_group: $ => seq('{', $.verbatim_env_name, '}'),
 
     verbatim_env_name: $ => /(verbatim|[BL]?Verbatim\*?|lstlisting|minted)/,
 
@@ -319,15 +319,15 @@ module.exports = grammar({
     makeatother_token: $ => seq($._escape, 'makeatother'),
 
     text_group: $ => seq(
-      $.begin_group, repeat($._text_mode), $.end_group
+      '{', repeat($._text_mode), '}'
     ),
 
     text_group_at: $ => seq(
-      $.begin_group, repeat($._text_mode_at), $.end_group
+      '{', repeat($._text_mode_at), '}'
     ),
 
     simple_text_group: $ => seq(
-      $.begin_group, $.text, $.end_group
+      '{', $.text, '}'
     ),
 
     opt_text_group: $ => seq(
@@ -339,7 +339,7 @@ module.exports = grammar({
     ),
 
     math_group: $ => seq(
-      $.begin_group, repeat($._math_mode), $.end_group
+      '{', repeat($._math_mode), '}'
     ),
 
     opt_math_group: $ => seq(
@@ -347,7 +347,7 @@ module.exports = grammar({
     ),
 
     math_text_group: $ => seq(
-      $.begin_group, optional($.text_mode), $.end_group
+      '{', optional($.text_mode), '}'
     ),
 
     token: $ => seq($._escape, $._name),
@@ -361,8 +361,8 @@ module.exports = grammar({
     // verbatim_text: $ => seq(/.*/, $._end_of_line),
 
     _escape: $ => '\\',
-    begin_group: $ => '{',
-    end_group: $ => '}',
+    // begin_group: $ => '{',
+    // end_group: $ => '}',
     begin_opt: $ => '[',
     end_opt: $ => ']',
     math_shift: $ => '$',
