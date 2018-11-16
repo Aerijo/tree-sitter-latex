@@ -155,10 +155,15 @@ foo %!TeX bar=wibble
   (text_mode (text))
   (magic_comment))
 
+
 =============
-documentclass
+documentclass2
 =============
-\documentclass[foo]{bar}
+\documentclass%
+%
+%
+[foo]
+{bar}
 ----------------
 (document
   (text_mode

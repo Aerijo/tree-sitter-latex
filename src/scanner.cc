@@ -15,11 +15,13 @@ using std::string;
 
 enum TokenType {
   VERB_BODY,
-  VERB_DELIM
+  VERB_DELIM,
+  SAME_PAR_WHITESPACE
 };
 
 struct Scanner {
-  char start_delim = 0;
+  char start_delim = 0; // scanning inline verbatim
+  bool seen_newline = false; // scanning same paragraph whitespace
 
 
   Scanner() {}
@@ -94,6 +96,36 @@ struct Scanner {
   }
 
 
+  bool scan_same_par_whitespace(TSLexer *lexer)
+  {
+    while (lexer->lookahead)
+    {
+      switch (lexer->lookahead) {
+        case ' ':
+        case '\t':
+          lexer->advance(lexer, false);
+          break;
+        case '\n':
+          if (seen_newline)
+          {
+            seen_newline = false;
+            return false;
+          }
+          seen_newline = true;
+          lexer->advance(lexer, false);
+          break;
+        default:
+          seen_newline = false;
+          lexer->mark_end(lexer);
+          lexer->result_symbol = SAME_PAR_WHITESPACE;
+          return true;
+      }
+    }
+
+    return true;
+  }
+
+
   bool scan(TSLexer *lexer, const bool *valid_symbols)
   {
     if (valid_symbols[VERB_BODY])
@@ -110,6 +142,10 @@ struct Scanner {
       {
         return scan_end_verb_delim(lexer);
       }
+    }
+    else if (valid_symbols[SAME_PAR_WHITESPACE])
+    {
+      return scan_same_par_whitespace(lexer);
     }
 
     return false;
